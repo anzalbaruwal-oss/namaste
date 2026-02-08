@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags to prevent preview exposure -->
+    <meta property="og:title" content="A Special Message for You">
+    <meta property="og:description" content="Open to discover a heartfelt surprise">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Special Message for You">
+    <meta name="twitter:description" content="Open to discover a heartfelt surprise">
+    <meta name="robots" content="noindex, nofollow">
+    <title>For My Sister</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff6b9d;
+            --light-pink: #ff8fab;
+            --soft-pink: #ffc2d1;
+            --dark-pink: #d63384;
+            --bg-gradient: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            --text-color: #5a2d43;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Landing Page (First thing users see) */
+        .landing-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-gradient);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .landing-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(212, 57, 104, 0.15);
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .lock-icon {
+            font-size: 5rem;
+            color: var(--primary-pink);
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+        }
+        
+        .landing-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .landing-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 35px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .enter-btn {
+            background: linear-gradient(to right, var(--primary-pink), var(--light-pink));
+            color: var(--white);
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 auto;
+        }
+        
+        .enter-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.6);
+        }
+        
+        .enter-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .note {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            max-width: 400px;
+        }
+        
+        /* Hidden until user clicks enter */
+        .main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .main-content.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Header */
+        .main-header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(to right, var(--primary-pink), var(--light-pink));
+            color: var(--white);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(212, 57, 104, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+        }
+        
+        .main-header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .main-header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Message Card */
+        .message-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(212, 57, 104, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 107, 157, 0.1);
+        }
+        
+        .message-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-pink), var(--light-pink));
+        }
+        
+        .message-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        
+        .signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--dark-pink);
+            margin-top: 30px;
+        }
+        
+        /* Question Section */
+        .question-section {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(212, 57, 104, 0.15);
+            text-align: center;
+            border: 2px dashed var(--light-pink);
+        }
+        
+        .question-title {
+            font-size: 2.2rem;
+            color: var(--dark-pink);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .name-highlight {
+            color: var(--primary-pink);
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .accept-btn {
+            background: linear-gradient(to right, var(--primary-pink), var(--light-pink));
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+        }
+        
+        .accept-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.6);
+        }
+        
+        .decline-btn {
+            background: #f5f5f5;
+            color: #aaa;
+            cursor: not-allowed;
+            position: relative;
+        }
+        
+        .decline-btn::after {
+            content: "This option is locked with love ❤️";
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-pink);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .decline-btn:hover::after {
+            opacity: 1;
+        }
+        
+        /* Surprise Section */
+        .surprise-section {
+            display: none;
+            background: var(--white);
+            border-radius: 25px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(212, 57, 104, 0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .surprise-section.active {
+            display: flex;
+            animation: fadeIn 1s ease;
+        }
+        
+        .roses-container {
+            font-size: 8rem;
+            color: var(--primary-pink);
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .surprise-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--dark-pink);
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        .surprise-message {
+            font-size: 1.4rem;
+            color: var(--text-color);
+            margin-top: 20px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        .balloons-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 70px;
+            border-radius: 50%;
+            bottom: -80px;
+            animation: balloonRise 12s linear forwards;
+        }
+        
+        .balloon::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 80px;
+            top: 70px;
+            left: 29px;
+        }
+        
+        .balloon:nth-child(odd) {
+            background-color: var(--primary-pink);
+        }
+        
+        .balloon:nth-child(odd)::after {
+            background-color: var(--primary-pink);
+        }
+        
+        .balloon:nth-child(even) {
+            background-color: var(--light-pink);
+        }
+        
+        .balloon:nth-child(even)::after {
+            background-color: var(--light-pink);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .heart {
+            color: var(--primary-pink);
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        
+        /* Floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 107, 157, 0.15);
+            animation: floatAround 20s linear infinite;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes balloonRise {
+            0% { transform: translateY(0) rotate(0); opacity: 1; }
+            100% { transform: translateY(-1200px) rotate(20deg); opacity: 0; }
+        }
+        
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, 100px) rotate(90deg); }
+            50% { transform: translate(50px, 200px) rotate(180deg); }
+            75% { transform: translate(-50px, 100px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .landing-title {
+                font-size: 2.8rem;
+            }
+            
+            .main-header h1 {
+                font-size: 3rem;
+            }
+            
+            .message-text {
+                font-size: 1.1rem;
+                padding: 0;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .surprise-name {
+                font-size: 3.5rem;
+            }
+            
+            .roses-container {
+                font-size: 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating background elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <!-- Landing Page (Prevents meta preview exposure) -->
+    <div class="landing-page" id="landingPage">
+        <div class="landing-content">
+            <div class="lock-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h1 class="landing-title">A Private Message</h1>
+            <p class="landing-subtitle">
+                This message is specially crafted for my dear sister.<br>
+                To protect the surprise, the content is hidden until you enter.
+            </p>
+            <button class="enter-btn" id="enterBtn">
+                <i class="fas fa-key"></i> Unlock The Message
+            </button>
+            <p class="note">
+                <i class="fas fa-info-circle"></i> This page is designed to prevent social media previews from revealing the surprise.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Main Content (Hidden until user clicks enter) -->
+    <div class="container">
+        <div class="main-content" id="mainContent">
+            <!-- Header -->
+            <header class="main-header">
+                <h1><i class="fas fa-rose"></i> Rose Day For My Sister</h1>
+                <p>A digital token of love for my dear sister Anshu</p>
+            </header>
+            
+            <!-- Message Card -->
+            <div class="message-card">
+                <p class="message-text">
+                    "A digital bloom for a beautiful soul. I may not be the greatest star in your sky, but I am grateful to hold a steady place in your heart. Though yesterday's sun set before I could offer a rose, let this token carry the weight of my remembrance and the depth of my affection today. For my dear sister, with love."
+                </p>
+                <div class="signature">From your brother</div>
+            </div>
+            
+            <!-- Question Section -->
+            <div class="question-section">
+                <h2 class="question-title">
+                    <i class="fas fa-question-circle"></i> A Special Question for <span class="name-highlight">Anshu</span>
+                </h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px; color: #666;">
+                    Will you accept this rose from your brother?
+                </p>
+                
+                <div class="buttons-container">
+                    <button class="action-btn accept-btn" id="acceptBtn">
+                        <i class="fas fa-heart"></i> Yes, I Accept
+                    </button>
+                    <button class="action-btn decline-btn" id="declineBtn" disabled>
+                        <i class="fas fa-times"></i> No, Thank You
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Surprise Section -->
+            <div class="surprise-section" id="surpriseSection">
+                <div class="balloons-container" id="balloonsContainer"></div>
+                
+                <div class="roses-container">
+                    <i class="fas fa-spa"></i>
+                </div>
+                
+                <h2 class="surprise-name">
+                    For My Dear Sister Anshu <span class="heart"><i class="fas fa-heart"></i></span>
+                </h2>
+                
+                <p class="surprise-message">
+                    Though the calendar says Rose Day has passed, in my heart, every day is an opportunity to celebrate you. This digital bouquet will never wilt, just like our brother-sister bond. Having you as my sister is one of life's greatest blessings.
+                </p>
+                
+                <div style="margin-top: 40px; font-size: 2rem; color: var(--light-pink);">
+                    <i class="fas fa-rose"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-rose"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-rose"></i>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(255, 107, 157, 0.1); border-radius: 15px; max-width: 600px;">
+                    <p style="font-size: 1.2rem; color: var(--dark-pink); font-style: italic;">
+                        <i class="fas fa-quote-left"></i> A sister is both your mirror and your opposite. - Elizabeth Fishel <i class="fas fa-quote-right"></i>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Made with <span class="heart"><i class="fas fa-heart"></i></span> for my sister Anshu | Rose Day Surprise</p>
+                <p style="margin-top: 10px;">This website is designed to keep your surprise safe from social media previews.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const landingPage = document.getElementById('landingPage');
+            const mainContent = document.getElementById('mainContent');
+            const enterBtn = document.getElementById('enterBtn');
+            const acceptBtn = document.getElementById('acceptBtn');
+            const declineBtn = document.getElementById('declineBtn');
+            const surpriseSection = document.getElementById('surpriseSection');
+            const balloonsContainer = document.getElementById('balloonsContainer');
+            const floatingElements = document.getElementById('floatingElements');
+            
+            // Create floating background elements
+            createFloatingElements();
+            
+            // Enter button - reveals the main content
+            enterBtn.addEventListener('click', function() {
+                // Hide landing page
+                landingPage.style.opacity = '0';
+                landingPage.style.transition = 'opacity 0.8s ease';
+                
+                // After fade out, hide it completely and show main content
+                setTimeout(() => {
+                    landingPage.style.display = 'none';
+                    mainContent.classList.add('active');
+                    
+                    // Scroll to top of main content
+                    window.scrollTo(0, 0);
+                    
+                    // Play entrance sound
+                    playEntranceSound();
+                }, 800);
+            });
+            
+            // Accept button - reveals the surprise
+            acceptBtn.addEventListener('click', function() {
+                // Show surprise section
+                surpriseSection.classList.add('active');
+                
+                // Create balloons
+                createBalloons();
+                
+                // Create confetti
+                createConfetti();
+                
+                // Change button text and disable it
+                acceptBtn.innerHTML = '<i class="fas fa-check"></i> Accepted! Thank you brother';
+                acceptBtn.style.background = 'linear-gradient(to right, #4CAF50, #8BC34A)';
+                acceptBtn.disabled = true;
+                
+                // Scroll to surprise section
+                setTimeout(() => {
+                    surpriseSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+                
+                // Play celebration sound
+                playCelebrationSound();
+            });
+            
+            // Decline button hover effect
+            declineBtn.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            
+            declineBtn.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            // Function to create floating background elements
+            function createFloatingElements() {
+                const icons = ['fa-rose', 'fa-heart', 'fa-star', 'fa-spa', 'fa-seedling'];
+                
+                for (let i = 0; i < 20; i++) {
+                    const element = document.createElement('div');
+                    element.classList.add('floating-element');
+                    
+                    // Random properties
+                    const icon = icons[Math.floor(Math.random() * icons.length)];
+                    const size = 0.8 + Math.random() * 2;
+                    const left = Math.random() * 100;
+                    const top = Math.random() * 100;
+                    const delay = Math.random() * 20;
+                    const duration = 20 + Math.random() * 30;
+                    
+                    element.innerHTML = `<i class="fas ${icon}"></i>`;
+                    element.style.left = `${left}%`;
+                    element.style.top = `${top}%`;
+                    element.style.fontSize = `${size}rem`;
+                    element.style.animationDelay = `${delay}s`;
+                    element.style.animationDuration = `${duration}s`;
+                    
+                    floatingElements.appendChild(element);
+                }
+            }
+            
+            // Function to create balloons
+            function createBalloons() {
+                const balloonColors = ['#ff6b9d', '#ff8fab', '#ffc2d1', '#d63384'];
+                
+                for (let i = 0; i < 20; i++) {
+                    const balloon = document.createElement('div');
+                    balloon.classList.add('balloon');
+                    
+                    // Random properties
+                    const size = 40 + Math.random() * 50;
+                    const left = Math.random() * 90;
+                    const delay = Math.random() * 6;
+                    const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                    
+                    balloon.style.width = `${size}px`;
+                    balloon.style.height = `${size * 1.2}px`;
+                    balloon.style.left = `${left}%`;
+                    balloon.style.animationDelay = `${delay}s`;
+                    balloon.style.backgroundColor = color;
+                    
+                    // Create the balloon string
+                    const string = document.createElement('div');
+                    string.style.position = 'absolute';
+                    string.style.width = '2px';
+                    string.style.height = `${size * 1.5}px`;
+                    string.style.backgroundColor = color;
+                    string.style.top = `${size * 1.2}px`;
+                    string.style.left = '50%';
+                    string.style.transform = 'translateX(-50%)';
+                    
+                    balloon.appendChild(string);
+                    balloonsContainer.appendChild(balloon);
+                }
+            }
+            
+            // Function to create confetti
+            function createConfetti() {
+                const confettiColors = ['#ff6b9d', '#ff8fab', '#ffc2d1', '#d63384'];
+                
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'absolute';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.top = '0';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.opacity = '0.8';
+                    confetti.style.zIndex = '5';
+                    
+                    // Animation
+                    confetti.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(${window.innerHeight}px) rotate(${360 + Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: 2000 + Math.random() * 2000,
+                        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                    });
+                    
+                    document.querySelector('.surprise-section').appendChild(confetti);
+                    
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        if (confetti.parentNode) {
+                            confetti.remove();
+                        }
+                    }, 4000);
+                }
+            }
+            
+            // Function to play entrance sound
+            function playEntranceSound() {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = 659.25; // E5 note
+                    oscillator.type = 'sine';
+                    
+                    gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 1);
+                } catch (e) {
+                    // Audio not supported
+                    console.log("Audio not supported");
+                }
+            }
+            
+            // Function to play celebration sound
+            function playCelebrationSound() {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    
+                    // Play a chord
+                    const notes = [523.25, 659.25, 783.99]; // C5, E5, G5
+                    
+                    notes.forEach((note, index) => {
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.value = note;
+                        oscillator.type = 'sine';
+                        
+                        gainNode.gain.setValueAtTime(0.15, audioContext.currentTime + (index * 0.1));
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + (index * 0.1) + 0.8);
+                        
+                        oscillator.start(audioContext.currentTime + (index * 0.1));
+                        oscillator.stop(audioContext.currentTime + (index * 0.1) + 0.8);
+                    });
+                } catch (e) {
+                    // Audio not supported
+                    console.log("Audio not supported");
+                }
+            }
+            
+            // Prevent right-click (optional, to protect the surprise)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
